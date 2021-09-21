@@ -1,0 +1,10 @@
+{% extends 'parent/home.html' %}
+
+{% block title %} Academic{% endblock title %}
+ {% block body %}
+
+{% for p in post  %}
+<p>{{p.content| safe}}</p>
+{%endfor%}
+
+{% endblock body %}

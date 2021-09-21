@@ -1,0 +1,51 @@
+
+{% extends 'student/home.html' %}
+{% block title %}View Result{% endblock title %}
+ {% block body %}
+
+{% for p in post  %}
+<br>
+<div class="container" mt-3 >
+
+    <br>
+
+ <p><b>Name Of The Examination </b>: {{p.Name_of_the_Examination}}</p>
+    <p><b>Date Of The Examination</b>: {{p.Date}}</p>
+ <p><b>Student Name </b>: {{p.StudentName}}</p>
+ <p><b>Roll No</b>: {{p.StudentRollNo}}</p>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<table style="width:100%">
+  <tr>
+    <th>Physics</th>
+        <th>Chemistry </th>
+        <th>Mathematics</th>
+        <th>Computer</th>
+        <th>Odia</th>
+        <th>English</th>
+  </tr>
+
+  <tr>
+    <td>{{p.Physics}}</td>
+    <td>{{p.Chemistry}}</td>
+    <td>{{p.Mathematics}}</td>
+    <td>{{p.Computer}}</td>
+    <td>{{p.Odia}}</td>
+    <td>{{p.English}}</td>
+
+  </tr>
+</table>
+    <br>
+<span style="color: #3598db;">
+ <p><b>Total Mark </b>: {{p.TotalMark}}</p>
+ <p><b>Percentage</b>: {{p.Percentage}}</p>
+ <p><b>Grade</b>: {{p.Grade}}</p>
+</span>
+
+</div>
+
+{% endfor %}
+{% endblock body %}

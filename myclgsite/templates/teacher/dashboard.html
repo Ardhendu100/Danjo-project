@@ -1,0 +1,29 @@
+{% extends 'teacher/home.html' %}
+
+{% block title %} My Dashboard{% endblock title %}
+ {% block body %}
+
+{% for p in post  %}
+<br>
+<div class="container" mt-3 >
+
+<tablle>
+    <div class="col-auto d-none d-lg-block">
+                    <img src="/media/{{p.profile_pic}}" class="bd-placeholder-img" width="200" height="200" aria-label="Placeholder: profile_pic">
+                    <title>profile</title></img>
+                </div>
+    <br>
+    <span style="color: #3598db;">
+ <p><b>Name</b>: {{p.name}}</p>
+ <p><b>Department</b>: {{p.department}}</p>
+ <p><b>Experience </b>: {{p.experience }}</p>
+ <p><b>Qualification  </b>: {{p.qualification  }}</p>
+ <p><b>position  </b>: {{p.position }}</p>
+ <p><b>Phone</b>: {{p.phone}}</p>
+ <p><b>Email</b>: {{p.email}}</p>
+    </span>
+</tablle>
+</div>
+
+{% endfor %}
+{% endblock body %}

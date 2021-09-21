@@ -1,0 +1,48 @@
+{% extends 'teacher/home.html' %}
+
+{% block title %} Contact{% endblock title %}
+
+{% block body %}
+<section class="text-gray-600 body-font relative">
+  <div class="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
+    <div class="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
+      <iframe  title="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14967.552933862378!2d85.81655201838173!3d20.30489285671252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19090155555555%3A0x969d7e1bac9268f!2sRegional%20College%20Of%20Management%20(RCM)!5e0!3m2!1sen!2sin!4v1631540003228!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <div class="bg-white relative flex flex-wrap py-6 rounded shadow-md"><div class="lg:w-1/2 px-6"><h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">ADDRESS</h2><p class="mt-1">Plot No. GD 2/12 & 13, Chakadola Vihar
+Chandrasekharpur, Bhubaneswar - 751023,
+Odisha, IN</p></div><div class="lg:w-1/2 px-6 mt-4 lg:mt-0"><h2 class="title-font font-semibold text-gray-600 tracking-widest text-xs">EMAIL</h2><a class="text-indigo-500 leading-relaxed"> info@rcm.ac.in</a><h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">PHONE</h2><p class="leading-relaxed">+91 (674) 6811333</p></div></div>
+
+    </div>
+  </div>
+    <div class="container my-3">
+<h3>For any query please contact us</h3>
+<form action="/contact" method="post">
+{% csrf_token %}
+  <div class="form-group">
+    <label for="name"><b>Name</b></label>
+    <input type="text" class="form-control" id="name" name="name"aria-describedby="name">
+  </div>
+
+  <div class="form-group">
+   <label for="email"><b>Email address</b></label>
+    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+
+  <div class="form-group">
+   <label for="phone"><b>Phone Number</b></label>
+    <input type="tel" class="form-control" id="phone" name="phone">
+   <small id="phonehelp" class="form-text text-muted">We'll never share your phone number with anyone else.</small>
+  </div>
+
+  <div class="form-group">
+   <label for="content"><b>Describe your issue :</b></label>
+    <textarea class="form-control" name="content" id="content" cols="30" rows="5"></textarea>
+  </div>
+
+    <br>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+</section>
+
+{% endblock %}

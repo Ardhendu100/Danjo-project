@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock title %}
+
+{% block body %}
+<div class="container my-3">
+<h3>If you are a Parent please login here</h3>
+
+
+<form action="/parentlogin" method="post">
+{% csrf_token %}
+    <div class="container">
+            <label>Username : </label>
+            <input type="text" placeholder="Enter Username" id="parusername" name="parusername" required><br><br>
+            <label>Password : </label>
+            <input type="password" placeholder="Enter Password" id="parpassword" name="parpassword" required><br><br>
+            <button type="submit" class="btn btn-primary">Login</button>
+
+        </div>
+
+</form>
+</div>
+ {% endblock %}
